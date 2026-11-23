@@ -25,6 +25,24 @@
 @media(max-width:760px){.method-hero{min-height:0}.hero-stage{display:flex;flex-direction:column;align-items:stretch;min-height:0;padding-top:50px;padding-bottom:95px}.hero-copy{padding:35px 0 0}.method-hero h1{font-size:clamp(3.05rem,9.1vw,5.4rem);white-space:normal}.hero-visual{width:100%;max-width:540px;margin:-5px auto -15px;aspect-ratio:1.04}.hero-chart{width:100%}.float-top{top:13%;right:0}.float-bottom{bottom:15%;left:0}.hero-bottom-bar .wrap{font-size:.58rem}.hero-bottom-bar .wrap span:nth-child(3){display:none}}
 @media(max-width:420px){.method-hero h1{font-size:clamp(2.7rem,10.1vw,3.6rem)}.hero-kicker{font-size:.6rem}.chart-float{gap:6px}.chart-float strong{font-size:.55rem}.chart-float small{font-size:.6rem}.float-icon{font-size:1.1rem}.hero-bottom-bar .wrap span:nth-child(2){display:none}}
 @media(prefers-reduced-motion:reduce){.hero-chart{animation:none}}
+/* Cinematic ocean photograph, lighthouse-like navigation glow and premium editorial contrast */
+.method-hero{background:#031521}
+.method-hero .hero-atmosphere{z-index:-1}
+.method-hero .hero-glow{inset:0;background:linear-gradient(90deg,rgba(3,18,30,.98) 0%,rgba(4,22,35,.94) 32%,rgba(4,22,35,.64) 57%,rgba(4,22,35,.3) 100%),linear-gradient(0deg,rgba(3,17,27,.92),transparent 30%),url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=2200&q=85') center 54%/cover no-repeat}
+.method-hero .hero-glow:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 76% 38%,rgba(232,169,90,.21),transparent 32%),radial-gradient(ellipse at 71% 70%,rgba(38,176,188,.17),transparent 44%);mix-blend-mode:screen}
+.method-hero .hero-stars{opacity:.18}
+.method-hero .hero-contours{opacity:.08}
+.method-hero h1{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:clamp(3.25rem,5.5vw,6.1rem);letter-spacing:-.055em;line-height:1.04;text-shadow:0 5px 40px #00101fd9}
+.method-hero h1 em{text-decoration:none;color:#f3f3eb}
+.method-hero h1 span{color:#e6bc66}
+.method-hero .hero-subtitle{color:#f5e8d1}
+.method-hero .hero-description{color:#d2e3e2}
+.method-hero .btn.primary{background:linear-gradient(120deg,#e6b755,#f7d47c);border-color:#edc86d;color:#081c2a;box-shadow:0 12px 40px #dcb35936}
+.hero-chart{filter:drop-shadow(0 35px 75px #000b);opacity:.94}
+.chart-float{border-color:#e5c78266}
+.float-icon{color:#efc975}
+.hero-bottom-bar{background:#051826e6}
+@media(max-width:760px){.method-hero .hero-glow{background:linear-gradient(180deg,rgba(3,18,30,.95) 0%,rgba(4,22,35,.88) 43%,rgba(4,22,35,.56) 72%,rgba(4,22,35,.92) 100%),url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1100&q=80') center/cover no-repeat}.method-hero h1{font-size:clamp(2.85rem,8.4vw,5rem)}}
 </style></head><body><header><nav class="wrap"><a class="logo" href="./">PATRÓN</a><div class="navlinks"><a href="#recorrido">Recorrido</a><a href="#motor">El método</a><a href="#carta">Carta</a><a href="#experiencia">Demostración</a><a href="#expertos">Para expertos</a></div></nav></header>
 <main><div class="hero method-hero">
 <div class="hero-atmosphere" aria-hidden="true"><div class="hero-glow"></div><div class="hero-stars"></div><div class="hero-contours"></div></div>
