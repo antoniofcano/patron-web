@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071c2a">
+  <meta name="description" content="Practica atraques, fondeo, navegación y RIPA con Patrón SIM. Conoce sus ejercicios, su modelo físico y su relación con Patrón Estudio.">
+  <title>Patrón SIM · Antes de salir a navegar</title>
+  <style>
+    :root { color-scheme: light; --navy:#071c2a; --ink:#142d39; --paper:#f2f4f1; --cyan:#79e0dd; --gold:#f0bd61; --muted:#435d67; --line:#bacccc }
+    * { box-sizing:border-box }
+    body { margin:0; background:var(--paper); color:var(--ink); font:17px/1.6 system-ui,sans-serif }
+    a { color:inherit; text-underline-offset:.2em }
+    a:focus-visible, summary:focus-visible { outline:3px solid #27878b; outline-offset:4px }
+    h1,h2,h3,p { margin:0 0 1rem }
+    h1,h2 { font-family:Georgia,serif; font-weight:700; line-height:1.04; letter-spacing:-.045em; text-wrap:balance }
+    h1 { font-size:clamp(3rem,7vw,7.3rem); max-width:13ch }
+    h2 { font-size:clamp(2.45rem,5vw,4.5rem); max-width:21ch }
+    h3 { font-size:1.25rem; line-height:1.25 }
+    .wrap { width:min(1140px, calc(100% - 40px)); margin-inline:auto }
+    .dark, header, footer { background:var(--navy); color:#f8f5ec }
+    nav, .actions, .footer-row { display:flex; align-items:center; flex-wrap:wrap; gap:.75rem 1.5rem }
+    nav, .footer-row { justify-content:space-between; padding-block:1rem }
+    .brand { font-weight:900; letter-spacing:.2em; text-decoration:none; white-space:nowrap }
+    .brand span, .hero strong { color:var(--gold) }
+    .navlinks { display:flex; flex-wrap:wrap; gap:.45rem 1.15rem; font-size:.88rem }
+    .navlinks a { text-decoration:none; color:#c2d8db }
+    .navlinks a:hover { text-decoration:underline }
+    .hero { position:relative; display:grid; min-height:clamp(550px, 82svh, 870px); align-items:center; isolation:isolate; background:#0b2939 }
+    .hero img, .hero::after { position:absolute; inset:0; width:100%; height:100%; z-index:-1 }
+    .hero img { object-fit:cover; object-position:65% center }
+    .hero::after { content:""; background:linear-gradient(90deg,#071c2a 0%,#071c2ae0 25%,#071c2a51 69%,#071c2a1c),linear-gradient(0deg,#071c2a 0%,transparent 35%) }
+    .hero-copy { padding-block:5rem }
+    .hero strong { font-weight:inherit }
+    .hero p { max-width:39ch; color:#e0eeeb; font-size:clamp(1.12rem,2vw,1.35rem) }
+    .actions { margin-top:1.6rem }
+    .button { display:inline-block; border:1px solid currentColor; padding:.7rem 1.05rem; border-radius:4px; font-size:.9rem; font-weight:750; text-decoration:none }
+    .button:hover { text-decoration:underline }
+    .primary { background:var(--gold); color:var(--navy); border-color:var(--gold) }
+    section { padding-block:clamp(3.6rem,8vw,7rem) }
+    .eyebrow { color:#24626a; text-transform:uppercase; font-size:.76rem; font-weight:800; letter-spacing:.15em }
+    .dark .eyebrow { color:var(--cyan) }
+    .lead { max-width:57ch; color:var(--muted); font-size:1.15rem }
+    .dark .lead, .dark .muted { color:#c2d8db }
+    .grid, .split { display:grid; gap:1.5rem; margin-top:2rem }
+    .grid { grid-template-columns:repeat(3,minmax(0,1fr)) }
+    .split { grid-template-columns:1fr 1fr; gap:clamp(1.75rem,5vw,5rem); align-items:start }
+    .card { border-top:1px solid var(--line); padding-top:1rem }
+    .card p, .muted { color:var(--muted) }
+    .scenario { background:#103241; border:1px solid #315967; border-radius:6px; padding:clamp(1.15rem,3vw,2rem) }
+    details { padding:.8rem 0; border-top:1px solid #55737c }
+    details:last-child { padding-bottom:0 }
+    details p { margin:.55rem 0 0 }
+    summary { cursor:pointer; font-weight:750; color:var(--cyan) }
+    .workshop { background:#e3eceb }
+    .workshop .physics { margin-top:2rem }
+    .physics { border-top:1px solid var(--line); padding-top:1rem; margin-top:1rem }
+    .note { font-size:.9rem; color:var(--muted); max-width:76ch; margin-top:1.4rem }
+    footer { border-top:1px solid #315967; font-size:.9rem }
+    @media(max-width:760px) {
+      .hero { align-items:end; min-height:0 }
+      .hero img { height:clamp(240px,65vw,440px); object-position:69% 49% }
+      .hero::after { height:clamp(245px,66vw,445px); background:linear-gradient(0deg,#0b2939 1%,transparent 42%) }
+      .hero-copy { padding-block:clamp(190px,51vw,350px) 2.75rem }
+      .split,.grid { grid-template-columns:1fr }
+    }
+  </style>
+<link rel="stylesheet" href="./assets/site-nav.css">
+</head>
+<body>
+  <header class="site-header">
+  <nav class="site-nav" aria-label="Navegación de Patrón">
+    <a class="site-brand" href="./" aria-label="Patrón, inicio">PATRÓN</a>
+    <ul class="site-links">
+      <li><a href="./">Inicio</a></li>
+      <li><a href="./metodo.html">Patrón Estudio</a></li>
+      <li><a href="./sim.html" aria-current="page">Patrón SIM</a></li>
+    </ul>
+  </nav>
+</header><div class="site-section-nav"><nav class="site-section-inner" aria-label="Secciones de SIM">
+        <a href="#ejercicios">Ejercicios</a>
+        <a href="#fisica">Física y evaluación</a>
+        <a href="#desarrollo-fisica">Desarrollo del motor</a>
+        <a href="#metodo">Método Patrón</a>
+      </nav></div>
+  <main>
+    <div class="hero dark">
+      <img src="./assets/sim-hero.webp" width="1440" height="960" alt="" fetchpriority="high">
+      <div class="wrap hero-copy">
+        <h1>La maniobra empieza <strong>antes del muelle.</strong></h1>
+        <p>Un simulador náutico en 3D para practicar atraques, reconocer riesgos de abordaje y entender qué hace el barco cuando tomas el mando.</p>
+        <div class="actions">
+          <a class="button primary" href="https://patron-sim-app.web.app/">Abrir el simulador ↗</a>
+          <a class="button" href="#maniobra">Ver un ejercicio</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="ejercicios">
+      <div class="wrap">
+        <p class="eyebrow">Catálogo de ejercicios</p>
+        <h2>De la cubierta a mar abierto.</h2>
+        <p class="lead">Cada ejercicio parte de una situación concreta. Puedes reconocer el barco antes de zarpar, ensayar una maniobra en puerto o decidir qué hacer cuando aparece otro buque.</p>
+        <div class="grid">
+          <article class="card"><h3>Conoce el barco</h3><p>Recorre un crucero por niveles, localiza la sentina y los grifos de fondo, o explora cómo gobierna la pala con arrancada.</p></article>
+          <article class="card"><h3>Maniobra en puerto</h3><p>Atraca de costado por babor, entra de popa en una plaza de pantalán o practica una aproximación con viento. Prepara las defensas y decide qué cabo dar primero.</p></article>
+          <article class="card"><h3>Fondea y navega</h3><p>Fondea en una cala con brisa, sigue un canal balizado o resuelve una vuelta encontrada en mar abierto. El catálogo también incluye ejercicios en Chipiona.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="maniobra">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Un ejercicio por dentro</p>
+          <h2>Atraque de costado por babor.</h2>
+          <p class="lead">Un velero de 6 metros, una dársena en calma y un muelle a babor. Desde el puesto de gobierno decides cómo aproximarte y das órdenes a un tripulante para preparar y manejar las amarras.</p>
+          <p class="muted">Puedes ensayar con ayudas y repetir en solitario. Las cámaras permiten mirar desde cubierta o cambiar de perspectiva para entender la posición del casco respecto al muelle.</p>
+        </div>
+        <div class="scenario">
+          <h3>¿Qué mirarías en cada momento?</h3>
+          <details open><summary>Antes de acercarte</summary><p>Prepara defensas a babor, a la altura del punto de contacto, y deja listo el cabo que quieras dar primero.</p></details>
+          <details><summary>Durante la aproximación</summary><p>Vigila la arrancada al reducir gas. El barco conserva movimiento y la respuesta de la pala cambia con el agua que le llega.</p></details>
+          <details><summary>Al quedar de costado</summary><p>Observa cuánto tarda la tripulación en dar el cabo y cómo cambia el movimiento del barco al tomar tensión la amarra.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="fisica">
+      <div class="wrap">
+        <p class="eyebrow">Modelo físico</p>
+        <h2>El barco responde a lo que haces.</h2>
+        <p class="lead">Un motor de física propio, especializado en náutica, calcula cómo avanza, deriva y gira cada embarcación. Es determinista: con las mismas condiciones iniciales y las mismas acciones en los mismos instantes, reproduce la misma maniobra.</p>
+        <div class="grid">
+          <article class="card"><h3>Casco, hélice y timón</h3><p>La inercia conserva la arrancada al cortar gas. La quilla condiciona la deriva y el giro. En marcha atrás, el sentido de la hélice puede desplazar la popa.</p></article>
+          <article class="card"><h3>Viento y corriente</h3><p>El viento empuja la obra muerta y la corriente modifica la derrota sobre el fondo. Así puedes comparar una aproximación en calma con otra en la que la brisa te separa del muelle.</p></article>
+          <article class="card"><h3>Contacto y amarras</h3><p>La posición y altura de las defensas determinan dónde protegen. Los cabos toman tensión y limitan el movimiento. Un contacto con velocidad puede dejar daños en el casco.</p></article>
+        </div>
+        <div class="split physics">
+          <div>
+            <p class="eyebrow">Evaluación de la maniobra</p>
+            <h3>¿Qué hizo que el ejercicio saliera bien?</h3>
+            <p>El motor calcula el estado del barco paso a paso. Cada ejercicio aplica sus propios criterios sobre esas mediciones y los eventos de la maniobra. En modo asistido puedes ver los criterios en directo. En solitario recibes el resultado al terminar.</p>
+          </div>
+          <div>
+            <h3>Qué comprueba el atraque por babor</h3>
+            <ul>
+              <li>Que termines en el amarre asignado, paralelo al muelle y por debajo de 0,3 nudos.</li>
+              <li>Que dejes dados los largos de proa y popa y el spring de centro.</li>
+              <li>Que completes la maniobra sin golpes por encima de un toque.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note physics"><strong>Alcance del modelo.</strong> La física está pensada para practicar decisiones y secuencias de maniobra. La calibración con embarcaciones reales sigue en curso. Usa SIM como complemento de las prácticas a bordo.</p>
+      </div>
+    </section>
+
+    <section class="workshop" id="desarrollo-fisica" aria-labelledby="desarrollo-titulo">
+      <div class="wrap">
+        <p class="eyebrow">Desarrollo del motor · 24 de noviembre de 2026</p>
+        <h2 id="desarrollo-titulo">Cómo estamos construyendo la física.</h2>
+        <p class="lead">Afinamos el motor maniobra a maniobra. Cada cambio parte de un comportamiento que queremos reproducir, como la caída de la popa al dar atrás, y se compara con resultados de referencia antes de incorporarlo.</p>
+        <div class="grid">
+          <article class="card">
+            <p class="eyebrow">Casco y quilla</p>
+            <h3>Cuánta arrancada conserva el barco</h3>
+            <p>El núcleo integra avance, deriva y giro con un paso fijo de 1/60 s. La masa añadida representa la inercia del agua que se mueve con el casco. Los perfiles que declaran acoplamientos pueden relacionar deriva y giro. La quilla y la pala generan fuerzas según el ángulo con el que les llega el agua.</p>
+          </article>
+          <article class="card">
+            <p class="eyebrow">Propulsión y gobierno</p>
+            <h3>Qué pasa al pasar de avante a atrás</h3>
+            <p>Según el perfil del barco, la inversión puede pasar progresivamente por punto muerto. El modelo admite curvas de empuje en función del régimen y la arrancada, además del efecto evolutivo de la hélice y del chorro sobre el timón. Así se estudia cómo cambia el gobierno entre instalaciones.</p>
+          </article>
+          <article class="card">
+            <p class="eyebrow">Puerto y fondeo</p>
+            <h3>Qué ocurre cuando un cabo toma carga</h3>
+            <p>El motor calcula contactos con el muelle, compresión de defensas y tensión en las amarras. El trabajo reciente afina cómo se aplica la fuerza en la cornamusa y cómo responde la defensa al comprimirse. En fondeo se modela la catenaria de forma opcional y se estima el riesgo de garreo.</p>
+          </article>
+          <article class="card">
+            <p class="eyebrow">Viento y corrientes</p>
+            <h3>Cómo cambia la maniobra de una zona a otra</h3>
+            <p>El viento puede variar por rachas, posición, relieve y brisa térmica. En el código del motor ya se pueden declarar por separado el nivel del agua y la corriente. El nivel efectivo alimenta la sonda, la varada y el fondeo, mientras la carta conserva su datum.</p>
+          </article>
+          <article class="card">
+            <p class="eyebrow">Oleaje costero</p>
+            <h3>Cómo se transforma la ola al acercarse a tierra</h3>
+            <p>La versión de desarrollo combina mar de viento y mar de fondo. En una franja costera modela refracción, abrigo y rotura por profundidad. Aplicar las fuerzas del oleaje al casco pertenece al siguiente incremento.</p>
+          </article>
+          <article class="card">
+            <p class="eyebrow">Vela y Patrón Vessel</p>
+            <h3>Cómo cambia la respuesta según el barco</h3>
+            <p>El modelo de vela en desarrollo calcula el empuje de mayor y génova según el trimado y el viento aparente, con una estimación del equilibrio de escora. Los perfiles de Vessel registran unidad, fuente e incertidumbre por parámetro. Los perfiles Fortuna y Tyler siguen en calibración.</p>
+          </article>
+        </div>
+        <div class="split physics">
+          <div>
+            <h3>Cómo comprobamos cada cambio</h3>
+            <p>El banco de pruebas ejecuta el núcleo sin escena 3D. Repite aceleraciones, paradas, giros, deriva, marcha atrás, contactos, maniobras con spring y fondeo. Registra trazas y fuerzas para comparar el comportamiento antes y después de cada ajuste.</p>
+            <p>La reproducción determinista sirve tanto para detectar cambios de comportamiento en el banco como para revisar las decisiones de un alumno durante un ejercicio.</p>
+          </div>
+          <div>
+            <h3>Qué está disponible y qué se está validando</h3>
+            <p>La versión publicada incorpora mejoras en maniobra de puerto y viento. La hidrología y el oleaje costero ya están integrados en el código y quedan pendientes de publicación según el estado del proyecto del 24 de noviembre.</p>
+            <p>Las pruebas del motor verifican la coherencia y la reproducibilidad. Sigue pendiente contrastar los parámetros y las maniobras con mediciones de embarcaciones reales y con la revisión de instructores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="dark">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Patrón Estudio y Patrón SIM</p>
+          <h2>Lo estudias en Patrón. Lo pones en práctica en SIM.</h2>
+        </div>
+        <div>
+          <p class="lead">En Estudio aprendes a reconocer una situación de vuelta encontrada. En SIM observas cómo evoluciona el encuentro, decides cuándo actuar y compruebas cómo se separan las derrotas.</p>
+          <p class="muted"><strong>Integración prevista.</strong> La arquitectura de Patrón contempla alojar SIM en la misma plataforma, con una cuenta común y el estado de práctica guardado en ella. Hoy puedes abrir el simulador desde su propia web.</p>
+          <div class="actions">
+            <a class="button primary" href="https://patron-sim-app.web.app/">Practicar en SIM ↗</a>
+            <a class="button" href="./metodo.html">Conocer el método</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><nav class="site-footer-links" aria-label="Seguir explorando Patrón"><a href="./">Inicio</a><a href="./metodo.html">Patrón Estudio</a><a href="./sim.html">Patrón SIM</a></nav></div></footer>
+</body>
+</html>
