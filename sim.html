@@ -65,19 +65,24 @@
       .split,.grid { grid-template-columns:1fr }
     }
   </style>
+<link rel="stylesheet" href="./assets/site-nav.css">
 </head>
 <body>
-  <header>
-    <nav class="wrap" aria-label="Navegación principal">
-      <a class="brand" href="./" aria-label="Inicio de Patrón">PATRÓN <span>SIM</span></a>
-      <div class="navlinks">
+  <header class="site-header">
+  <nav class="site-nav" aria-label="Navegación de Patrón">
+    <a class="site-brand" href="./" aria-label="Patrón, inicio">PATRÓN</a>
+    <ul class="site-links">
+      <li><a href="./">Inicio</a></li>
+      <li><a href="./metodo.html">Patrón Estudio</a></li>
+      <li><a href="./sim.html" aria-current="page">Patrón SIM</a></li>
+    </ul>
+  </nav>
+</header><div class="site-section-nav"><nav class="site-section-inner" aria-label="Secciones de SIM">
         <a href="#ejercicios">Ejercicios</a>
         <a href="#fisica">Física y evaluación</a>
         <a href="#desarrollo-fisica">Desarrollo del motor</a>
         <a href="#metodo">Método Patrón</a>
-      </div>
-    </nav>
-  </header>
+      </nav></div>
   <main>
     <div class="hero dark">
       <img src="./assets/sim-hero.webp" width="1440" height="960" alt="" fetchpriority="high">
@@ -219,11 +224,6 @@
       </div>
     </section>
   </main>
-  <footer>
-    <div class="wrap footer-row">
-      <a class="brand" href="./">PATRÓN <span>SIM</span></a>
-      <a href="./metodo.html">Patrón Estudio</a>
-    </div>
-  </footer>
+  <footer><div class="wrap"><nav class="site-footer-links" aria-label="Seguir explorando Patrón"><a href="./">Inicio</a><a href="./metodo.html">Patrón Estudio</a><a href="./sim.html">Patrón SIM</a></nav></div></footer>
 </body>
 </html>

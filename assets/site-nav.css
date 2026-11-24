@@ -1,0 +1,13 @@
+.site-header { position:relative; background:#071c2a; color:#f8f5ec; border-bottom:1px solid #ffffff22; }
+.site-header .site-nav { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.65rem 1.25rem; width:min(1140px,calc(100% - 40px)); margin:auto; padding:1rem 0; }
+.site-brand { color:inherit; font-weight:900; letter-spacing:.23em; text-decoration:none; }
+.site-links { display:flex; align-items:center; flex-wrap:wrap; gap:.35rem 1.15rem; list-style:none; padding:0; margin:0; }
+.site-links a, .site-footer-links a { color:#d8e8e9; font-size:.9rem; text-decoration:none; text-underline-offset:.3em; }
+.site-links a[aria-current="page"] { color:#f0bd61; text-decoration:underline; }
+.site-links a:hover, .site-brand:hover, .site-footer-links a:hover { text-decoration:underline; }
+.site-header a:focus-visible, .site-footer-links a:focus-visible, .site-section-nav a:focus-visible { outline:2px solid #79e0dd; outline-offset:4px; }
+.site-footer-links { display:flex; justify-content:flex-start; flex-wrap:wrap; gap:.65rem 1.2rem; padding:.65rem 0; }
+.site-section-nav { background:#103241; color:#e0eeeb; }
+.site-section-nav .site-section-inner { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:.55rem 1.25rem; width:min(1140px,calc(100% - 40px)); margin:auto; padding:.75rem 0; font-size:.85rem; }
+.site-section-inner a { color:inherit; text-decoration:none; }
+.site-section-inner a:hover { text-decoration:underline; }
