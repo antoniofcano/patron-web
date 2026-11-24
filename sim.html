@@ -52,6 +52,8 @@
     details:last-child { padding-bottom:0 }
     details p { margin:.55rem 0 0 }
     summary { cursor:pointer; font-weight:750; color:var(--cyan) }
+    .workshop { background:#e3eceb }
+    .workshop .physics { margin-top:2rem }
     .physics { border-top:1px solid var(--line); padding-top:1rem; margin-top:1rem }
     .note { font-size:.9rem; color:var(--muted); max-width:76ch; margin-top:1.4rem }
     footer { border-top:1px solid #315967; font-size:.9rem }
@@ -71,6 +73,7 @@
       <div class="navlinks">
         <a href="#ejercicios">Ejercicios</a>
         <a href="#fisica">Física y evaluación</a>
+        <a href="#desarrollo-fisica">Desarrollo del motor</a>
         <a href="#metodo">Método Patrón</a>
       </div>
     </nav>
@@ -144,6 +147,58 @@
           </div>
         </div>
         <p class="note physics"><strong>Alcance del modelo.</strong> La física está pensada para practicar decisiones y secuencias de maniobra. La calibración con embarcaciones reales sigue en curso. Usa SIM como complemento de las prácticas a bordo.</p>
+      </div>
+    </section>
+
+    <section class="workshop" id="desarrollo-fisica" aria-labelledby="desarrollo-titulo">
+      <div class="wrap">
+        <p class="eyebrow">Desarrollo del motor · 24 de noviembre de 2026</p>
+        <h2 id="desarrollo-titulo">Cómo estamos construyendo la física.</h2>
+        <p class="lead">Afinamos el motor maniobra a maniobra. Cada cambio parte de un comportamiento que queremos reproducir, como la caída de la popa al dar atrás, y se compara con resultados de referencia antes de incorporarlo.</p>
+        <div class="grid">
+          <article class="card">
+            <p class="eyebrow">Casco y quilla</p>
+            <h3>Cuánta arrancada conserva el barco</h3>
+            <p>El núcleo integra avance, deriva y giro con un paso fijo de 1/60 s. La masa añadida representa la inercia del agua que se mueve con el casco. Los perfiles que declaran acoplamientos pueden relacionar deriva y giro. La quilla y la pala generan fuerzas según el ángulo con el que les llega el agua.</p>
+          </article>
+          <article class="card">
+            <p class="eyebrow">Propulsión y gobierno</p>
+            <h3>Qué pasa al pasar de avante a atrás</h3>
+            <p>Según el perfil del barco, la inversión puede pasar progresivamente por punto muerto. El modelo admite curvas de empuje en función del régimen y la arrancada, además del efecto evolutivo de la hélice y del chorro sobre el timón. Así se estudia cómo cambia el gobierno entre instalaciones.</p>
+          </article>
+          <article class="card">
+            <p class="eyebrow">Puerto y fondeo</p>
+            <h3>Qué ocurre cuando un cabo toma carga</h3>
+            <p>El motor calcula contactos con el muelle, compresión de defensas y tensión en las amarras. El trabajo reciente afina cómo se aplica la fuerza en la cornamusa y cómo responde la defensa al comprimirse. En fondeo se modela la catenaria de forma opcional y se estima el riesgo de garreo.</p>
+          </article>
+          <article class="card">
+            <p class="eyebrow">Viento y corrientes</p>
+            <h3>Cómo cambia la maniobra de una zona a otra</h3>
+            <p>El viento puede variar por rachas, posición, relieve y brisa térmica. En el código del motor ya se pueden declarar por separado el nivel del agua y la corriente. El nivel efectivo alimenta la sonda, la varada y el fondeo, mientras la carta conserva su datum.</p>
+          </article>
+          <article class="card">
+            <p class="eyebrow">Oleaje costero</p>
+            <h3>Cómo se transforma la ola al acercarse a tierra</h3>
+            <p>La versión de desarrollo combina mar de viento y mar de fondo. En una franja costera modela refracción, abrigo y rotura por profundidad. Aplicar las fuerzas del oleaje al casco pertenece al siguiente incremento.</p>
+          </article>
+          <article class="card">
+            <p class="eyebrow">Vela y Patrón Vessel</p>
+            <h3>Cómo cambia la respuesta según el barco</h3>
+            <p>El modelo de vela en desarrollo calcula el empuje de mayor y génova según el trimado y el viento aparente, con una estimación del equilibrio de escora. Los perfiles de Vessel registran unidad, fuente e incertidumbre por parámetro. Los perfiles Fortuna y Tyler siguen en calibración.</p>
+          </article>
+        </div>
+        <div class="split physics">
+          <div>
+            <h3>Cómo comprobamos cada cambio</h3>
+            <p>El banco de pruebas ejecuta el núcleo sin escena 3D. Repite aceleraciones, paradas, giros, deriva, marcha atrás, contactos, maniobras con spring y fondeo. Registra trazas y fuerzas para comparar el comportamiento antes y después de cada ajuste.</p>
+            <p>La reproducción determinista sirve tanto para detectar cambios de comportamiento en el banco como para revisar las decisiones de un alumno durante un ejercicio.</p>
+          </div>
+          <div>
+            <h3>Qué está disponible y qué se está validando</h3>
+            <p>La versión publicada incorpora mejoras en maniobra de puerto y viento. La hidrología y el oleaje costero ya están integrados en el código y quedan pendientes de publicación según el estado del proyecto del 24 de noviembre.</p>
+            <p>Las pruebas del motor verifican la coherencia y la reproducibilidad. Sigue pendiente contrastar los parámetros y las maniobras con mediciones de embarcaciones reales y con la revisión de instructores.</p>
+          </div>
+        </div>
       </div>
     </section>
 
